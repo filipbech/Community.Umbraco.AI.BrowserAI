@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/Umbraco.AI.BrowserAI.props" />
+</Project>

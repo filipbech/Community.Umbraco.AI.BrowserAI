@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <Title>Umbraco AI Browser AI Provider</Title>
+    <Description>Browser AI provider for Umbraco AI</Description>
+    <PackageTags>umbraco;umbraco-marketplace;ai;browserai;gemini-nano</PackageTags>
+    <StaticWebAssetBasePath>App_Plugins/UmbracoAIBrowserAI</StaticWebAssetBasePath>
+    <AddRazorSupportForMvc>false</AddRazorSupportForMvc>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Umbraco.AI.BrowserAI.Tests.Unit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Umbraco.AI.Core" Version="1.6.*" />
+  </ItemGroup>
+
+  <Target Name="UpdateUmbracoPackageVersion" BeforeTargets="BeforeCompile" Condition="'$(PackageVersion)' != '' and '$(ContinuousIntegrationBuild)' == 'true'">
+    <PropertyGroup>
+      <UmbracoPackageJsonPath>$(MSBuildProjectDirectory)\wwwroot\umbraco-package.json</UmbracoPackageJsonPath>
+    </PropertyGroup>
+    <Exec Command="npx json -I -f &quot;$(UmbracoPackageJsonPath)&quot; -e &quot;this.version='$(PackageVersion)'&quot;" />
+  </Target>
+
+</Project>

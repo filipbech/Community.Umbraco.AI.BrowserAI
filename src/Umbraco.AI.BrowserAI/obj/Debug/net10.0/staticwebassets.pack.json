@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/filipbech/Desktop/test/Umbraco.AI.BrowserAI/src/Umbraco.AI.BrowserAI/wwwroot/assets/browser-ai-register.js",
+      "PackagePath": "staticwebassets/assets/browser-ai-register.js"
+    },
+    {
+      "Id": "/Users/filipbech/Desktop/test/Umbraco.AI.BrowserAI/src/Umbraco.AI.BrowserAI/wwwroot/assets/browser-ai-sw.js",
+      "PackagePath": "staticwebassets/assets/browser-ai-sw.js"
+    },
+    {
+      "Id": "/Users/filipbech/Desktop/test/Umbraco.AI.BrowserAI/src/Umbraco.AI.BrowserAI/wwwroot/lang/en.js",
+      "PackagePath": "staticwebassets/lang/en.js"
+    },
+    {
+      "Id": "/Users/filipbech/Desktop/test/Umbraco.AI.BrowserAI/src/Umbraco.AI.BrowserAI/wwwroot/umbraco-package.json",
+      "PackagePath": "staticwebassets/umbraco-package.json"
+    },
+    {
+      "Id": "obj/Debug/net10.0/staticwebassets/msbuild.Umbraco.AI.BrowserAI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj/Debug/net10.0/staticwebassets/msbuild.Umbraco.AI.BrowserAI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net10.0/staticwebassets/msbuild.build.Umbraco.AI.BrowserAI.props",
+      "PackagePath": "build\\Umbraco.AI.BrowserAI.props"
+    },
+    {
+      "Id": "obj/Debug/net10.0/staticwebassets/msbuild.buildMultiTargeting.Umbraco.AI.BrowserAI.props",
+      "PackagePath": "buildMultiTargeting\\Umbraco.AI.BrowserAI.props"
+    },
+    {
+      "Id": "obj/Debug/net10.0/staticwebassets/msbuild.buildTransitive.Umbraco.AI.BrowserAI.props",
+      "PackagePath": "buildTransitive\\Umbraco.AI.BrowserAI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,360 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Umbraco.AI.BrowserAI</name>
+    </assembly>
+    <members>
+        <member name="T:Umbraco.AI.BrowserAI.BrowserAIChatCapability">
+            <summary>
+            AI chat capability for Browser AI provider.
+            </summary>
+        </member>
+        <member name="M:Umbraco.AI.BrowserAI.BrowserAIChatCapability.#ctor(Umbraco.AI.BrowserAI.BrowserAIProvider)">
+            <summary>
+            AI chat capability for Browser AI provider.
+            </summary>
+        </member>
+        <member name="M:Umbraco.AI.BrowserAI.BrowserAIChatCapability.GetModelsAsync(Umbraco.AI.BrowserAI.BrowserAIProviderSettings,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Umbraco.AI.BrowserAI.BrowserAIChatCapability.CreateClient(Umbraco.AI.BrowserAI.BrowserAIProviderSettings,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:Umbraco.AI.BrowserAI.BrowserAIChatClient">
+            <summary>
+            Chat client that uses the browser-based job queue for AI processing.
+            </summary>
+        </member>
+        <member name="M:Umbraco.AI.BrowserAI.BrowserAIChatClient.#ctor(Umbraco.AI.BrowserAI.IBrowserAIJobStore,Microsoft.Extensions.Logging.ILogger,Umbraco.AI.BrowserAI.BrowserAIProviderSettings,System.String,Microsoft.Extensions.AI.IChatClient)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Umbraco.AI.BrowserAI.BrowserAIChatClient"/> class.
+            </summary>
+        </member>
+        <member name="P:Umbraco.AI.BrowserAI.BrowserAIChatClient.Metadata">
+            <inheritdoc />
+        </member>
+        <member name="M:Umbraco.AI.BrowserAI.BrowserAIChatClient.GetResponseAsync(System.Collections.Generic.IEnumerable{Microsoft.Extensions.AI.ChatMessage},Microsoft.Extensions.AI.ChatOptions,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Umbraco.AI.BrowserAI.BrowserAIChatClient.GetStreamingResponseAsync(System.Collections.Generic.IEnumerable{Microsoft.Extensions.AI.ChatMessage},Microsoft.Extensions.AI.ChatOptions,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Umbraco.AI.BrowserAI.BrowserAIChatClient.GetService(System.Type,System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Umbraco.AI.BrowserAI.BrowserAIChatClient.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="T:Umbraco.AI.BrowserAI.BrowserAIJobCleanupService">
+            <summary>
+            Background service that periodically purges expired jobs from the store.
+            </summary>
+        </member>
+        <member name="M:Umbraco.AI.BrowserAI.BrowserAIJobCleanupService.#ctor(Umbraco.AI.BrowserAI.IBrowserAIJobStore,Microsoft.Extensions.Options.IOptions{Umbraco.AI.BrowserAI.BrowserAIProviderSettings},Microsoft.Extensions.Logging.ILogger{Umbraco.AI.BrowserAI.BrowserAIJobCleanupService})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Umbraco.AI.BrowserAI.BrowserAIJobCleanupService"/> class.
+            </summary>
+        </member>
+        <member name="M:Umbraco.AI.BrowserAI.BrowserAIJobCleanupService.ExecuteAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Umbraco.AI.BrowserAI.BrowserAIProvider">
+            <summary>
+            AI provider for Browser-based AI services (Gemini Nano via self.ai).
+            </summary>
+            <remarks>
+            This provider routes inference requests to Chrome's built-in browser AI.
+            The browser runs the model locally; the server acts as a job queue.
+            A Service Worker handles execution so the browser tab does not need to stay open.
+            </remarks>
+        </member>
+        <member name="M:Umbraco.AI.BrowserAI.BrowserAIProvider.#ctor(Umbraco.AI.Core.Providers.IAIProviderInfrastructure,Umbraco.AI.BrowserAI.IBrowserAIJobStore,Microsoft.Extensions.Logging.ILogger{Umbraco.AI.BrowserAI.BrowserAIProvider})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Umbraco.AI.BrowserAI.BrowserAIProvider"/> class.
+            </summary>
+            <param name="infrastructure">The provider infrastructure.</param>
+            <param name="jobStore">The job store for managing browser AI jobs.</param>
+            <param name="logger">The logger.</param>
+        </member>
+        <member name="P:Umbraco.AI.BrowserAI.BrowserAIProvider.JobStore">
+            <summary>
+            Gets the job store for this provider.
+            </summary>
+        </member>
+        <member name="P:Umbraco.AI.BrowserAI.BrowserAIProvider.Logger">
+            <summary>
+            Gets the logger for this provider.
+            </summary>
+        </member>
+        <member name="T:Umbraco.AI.BrowserAI.BrowserAIProviderSettings">
+            <summary>
+            Settings for the Browser AI provider.
+            </summary>
+        </member>
+        <member name="P:Umbraco.AI.BrowserAI.BrowserAIProviderSettings.Enabled">
+            <summary>
+            Whether the Browser AI provider is enabled.
+            </summary>
+        </member>
+        <member name="P:Umbraco.AI.BrowserAI.BrowserAIProviderSettings.TimeoutSeconds">
+            <summary>
+            Timeout in seconds for waiting for browser response.
+            </summary>
+        </member>
+        <member name="P:Umbraco.AI.BrowserAI.BrowserAIProviderSettings.MaxJobAgeSeconds">
+            <summary>
+            Maximum age in seconds for jobs before they are purged.
+            </summary>
+        </member>
+        <member name="P:Umbraco.AI.BrowserAI.BrowserAIProviderSettings.FallbackProviderId">
+            <summary>
+            Optional fallback provider ID to use when browser AI times out.
+            </summary>
+        </member>
+        <member name="T:Umbraco.AI.BrowserAI.BrowserAIServiceCollectionExtensions">
+            <summary>
+            Extension methods for registering Browser AI services.
+            </summary>
+        </member>
+        <member name="M:Umbraco.AI.BrowserAI.BrowserAIServiceCollectionExtensions.AddBrowserAI(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds Browser AI services to the service collection.
+            </summary>
+            <param name="services">The service collection.</param>
+            <returns>The service collection for chaining.</returns>
+        </member>
+        <member name="T:Umbraco.AI.BrowserAI.Controllers.BrowserAIController">
+            <summary>
+            API controller for Browser AI job management.
+            </summary>
+        </member>
+        <member name="M:Umbraco.AI.BrowserAI.Controllers.BrowserAIController.#ctor(Umbraco.AI.BrowserAI.IBrowserAIJobStore,Microsoft.Extensions.Options.IOptions{Umbraco.AI.BrowserAI.BrowserAIProviderSettings},Microsoft.Extensions.Logging.ILogger{Umbraco.AI.BrowserAI.Controllers.BrowserAIController})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Umbraco.AI.BrowserAI.Controllers.BrowserAIController"/> class.
+            </summary>
+        </member>
+        <member name="M:Umbraco.AI.BrowserAI.Controllers.BrowserAIController.GetStatus">
+            <summary>
+            Health check endpoint - no auth required.
+            </summary>
+        </member>
+        <member name="M:Umbraco.AI.BrowserAI.Controllers.BrowserAIController.GetNextJob">
+            <summary>
+            Gets the next pending job for processing.
+            </summary>
+        </member>
+        <member name="M:Umbraco.AI.BrowserAI.Controllers.BrowserAIController.PostResult(System.String,Umbraco.AI.BrowserAI.Models.JobResultRequest)">
+            <summary>
+            Posts the result of a completed job.
+            </summary>
+        </member>
+        <member name="M:Umbraco.AI.BrowserAI.Controllers.BrowserAIController.PostError(System.String,Umbraco.AI.BrowserAI.Models.JobErrorRequest)">
+            <summary>
+            Posts an error for a failed job.
+            </summary>
+        </member>
+        <member name="T:Umbraco.AI.BrowserAI.IBrowserAIJobStore">
+            <summary>
+            Store for managing Browser AI jobs.
+            </summary>
+        </member>
+        <member name="M:Umbraco.AI.BrowserAI.IBrowserAIJobStore.CreateJobAsync(System.String,System.String)">
+            <summary>
+            Creates a new job with the specified prompt and operation type.
+            </summary>
+            <param name="prompt">The prompt text.</param>
+            <param name="operationType">The operation type (e.g., "chat", "summarize", "translate").</param>
+            <returns>The created job.</returns>
+        </member>
+        <member name="M:Umbraco.AI.BrowserAI.IBrowserAIJobStore.GetNextPendingJobAsync">
+            <summary>
+            Gets the next pending job and marks it as processing.
+            </summary>
+            <returns>The next pending job, or null if none available.</returns>
+        </member>
+        <member name="M:Umbraco.AI.BrowserAI.IBrowserAIJobStore.GetJobAsync(System.String)">
+            <summary>
+            Gets a job by its ID.
+            </summary>
+            <param name="id">The job ID.</param>
+            <returns>The job, or null if not found.</returns>
+        </member>
+        <member name="M:Umbraco.AI.BrowserAI.IBrowserAIJobStore.MarkCompleteAsync(System.String,System.String)">
+            <summary>
+            Marks a job as complete with the specified result.
+            </summary>
+            <param name="id">The job ID.</param>
+            <param name="result">The result text.</param>
+        </member>
+        <member name="M:Umbraco.AI.BrowserAI.IBrowserAIJobStore.MarkFailedAsync(System.String,System.String)">
+            <summary>
+            Marks a job as failed with the specified error.
+            </summary>
+            <param name="id">The job ID.</param>
+            <param name="error">The error message.</param>
+        </member>
+        <member name="M:Umbraco.AI.BrowserAI.IBrowserAIJobStore.PurgeExpiredJobsAsync(System.TimeSpan)">
+            <summary>
+            Removes jobs older than the specified age.
+            </summary>
+            <param name="maxAge">Maximum age for jobs to keep.</param>
+        </member>
+        <member name="T:Umbraco.AI.BrowserAI.InMemoryBrowserAIJobStore">
+            <summary>
+            In-memory implementation of <see cref="T:Umbraco.AI.BrowserAI.IBrowserAIJobStore"/>.
+            </summary>
+            <remarks>
+            Thread-safe implementation using ConcurrentDictionary.
+            Note: Jobs are lost when the application restarts.
+            </remarks>
+        </member>
+        <member name="M:Umbraco.AI.BrowserAI.InMemoryBrowserAIJobStore.CreateJobAsync(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Umbraco.AI.BrowserAI.InMemoryBrowserAIJobStore.GetNextPendingJobAsync">
+            <inheritdoc />
+        </member>
+        <member name="M:Umbraco.AI.BrowserAI.InMemoryBrowserAIJobStore.GetJobAsync(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Umbraco.AI.BrowserAI.InMemoryBrowserAIJobStore.MarkCompleteAsync(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Umbraco.AI.BrowserAI.InMemoryBrowserAIJobStore.MarkFailedAsync(System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Umbraco.AI.BrowserAI.InMemoryBrowserAIJobStore.PurgeExpiredJobsAsync(System.TimeSpan)">
+            <inheritdoc />
+        </member>
+        <member name="T:Umbraco.AI.BrowserAI.Models.BrowserAIJob">
+            <summary>
+            Represents a job to be processed by browser-based AI.
+            </summary>
+        </member>
+        <member name="P:Umbraco.AI.BrowserAI.Models.BrowserAIJob.Id">
+            <summary>
+            Unique identifier for the job.
+            </summary>
+        </member>
+        <member name="P:Umbraco.AI.BrowserAI.Models.BrowserAIJob.Prompt">
+            <summary>
+            The full prompt text to process.
+            </summary>
+        </member>
+        <member name="P:Umbraco.AI.BrowserAI.Models.BrowserAIJob.OperationType">
+            <summary>
+            The type of operation (e.g., "chat", "summarize", "translate").
+            </summary>
+        </member>
+        <member name="P:Umbraco.AI.BrowserAI.Models.BrowserAIJob.Status">
+            <summary>
+            Current status of the job.
+            </summary>
+        </member>
+        <member name="P:Umbraco.AI.BrowserAI.Models.BrowserAIJob.Result">
+            <summary>
+            The result text, populated when job completes successfully.
+            </summary>
+        </member>
+        <member name="P:Umbraco.AI.BrowserAI.Models.BrowserAIJob.Error">
+            <summary>
+            Error message, populated when job fails.
+            </summary>
+        </member>
+        <member name="P:Umbraco.AI.BrowserAI.Models.BrowserAIJob.CreatedAt">
+            <summary>
+            When the job was created.
+            </summary>
+        </member>
+        <member name="P:Umbraco.AI.BrowserAI.Models.BrowserAIJob.CompletedAt">
+            <summary>
+            When the job completed (successfully or with failure).
+            </summary>
+        </member>
+        <member name="T:Umbraco.AI.BrowserAI.Models.BrowserAIJobStatus">
+            <summary>
+            Status of a Browser AI job.
+            </summary>
+        </member>
+        <member name="F:Umbraco.AI.BrowserAI.Models.BrowserAIJobStatus.Pending">
+            <summary>
+            Job is waiting to be picked up by a browser.
+            </summary>
+        </member>
+        <member name="F:Umbraco.AI.BrowserAI.Models.BrowserAIJobStatus.Processing">
+            <summary>
+            Job is currently being processed by a browser.
+            </summary>
+        </member>
+        <member name="F:Umbraco.AI.BrowserAI.Models.BrowserAIJobStatus.Complete">
+            <summary>
+            Job completed successfully.
+            </summary>
+        </member>
+        <member name="F:Umbraco.AI.BrowserAI.Models.BrowserAIJobStatus.Failed">
+            <summary>
+            Job failed with an error.
+            </summary>
+        </member>
+        <member name="F:Umbraco.AI.BrowserAI.Models.BrowserAIJobStatus.TimedOut">
+            <summary>
+            Job timed out waiting for browser response.
+            </summary>
+        </member>
+        <member name="T:Umbraco.AI.BrowserAI.Models.JobErrorRequest">
+            <summary>
+            Request body for posting job error.
+            </summary>
+        </member>
+        <member name="P:Umbraco.AI.BrowserAI.Models.JobErrorRequest.Error">
+            <summary>
+            The error message from browser AI processing.
+            </summary>
+        </member>
+        <member name="T:Umbraco.AI.BrowserAI.Models.JobResponse">
+            <summary>
+            Response body for job details sent to browser.
+            </summary>
+        </member>
+        <member name="P:Umbraco.AI.BrowserAI.Models.JobResponse.Id">
+            <summary>
+            The job ID.
+            </summary>
+        </member>
+        <member name="P:Umbraco.AI.BrowserAI.Models.JobResponse.Prompt">
+            <summary>
+            The prompt text to process.
+            </summary>
+        </member>
+        <member name="P:Umbraco.AI.BrowserAI.Models.JobResponse.OperationType">
+            <summary>
+            The operation type (e.g., "chat", "summarize", "translate").
+            </summary>
+        </member>
+        <member name="T:Umbraco.AI.BrowserAI.Models.JobResultRequest">
+            <summary>
+            Request body for posting job result.
+            </summary>
+        </member>
+        <member name="P:Umbraco.AI.BrowserAI.Models.JobResultRequest.Result">
+            <summary>
+            The result text from browser AI processing.
+            </summary>
+        </member>
+        <member name="T:Umbraco.AI.BrowserAI.Models.StatusResponse">
+            <summary>
+            Response body for status endpoint.
+            </summary>
+        </member>
+        <member name="P:Umbraco.AI.BrowserAI.Models.StatusResponse.Available">
+            <summary>
+            Whether the Browser AI service is available.
+            </summary>
+        </member>
+        <member name="P:Umbraco.AI.BrowserAI.Models.StatusResponse.Version">
+            <summary>
+            Version of the Browser AI provider.
+            </summary>
+        </member>
+    </members>
+</doc>
