@@ -1,10 +1,18 @@
 {
   "$schema": "https://marketplace.umbraco.com/umbraco-marketplace-schema.json",
+  "Title": "Browser AI Provider",
+  "Description": "An experimental community AI provider that runs AI inference locally in the browser using Chrome's built-in Gemini Nano model. No API keys, no cloud costs, no data leaves the machine.",
+  "Categories": "Artificial Intelligence",
+  "PackageType": "Package",
+  "LicenseTypes": ["Free"],
+  "Tags": ["ai", "browser-ai", "gemini-nano", "local-inference", "chrome"],
+  "DocumentationUrl": "https://github.com/filipbech/Community.Umbraco.AI.BrowserAI",
+  "IssueTrackerUrl": "https://github.com/filipbech/Community.Umbraco.AI.BrowserAI/issues",
   "AuthorDetails": {
     "Name": "Filip Bech",
     "Description": "",
     "Url": "https://github.com/filipbech",
-    "ImageUrl": "",
+    "ImageUrl": "https://github.com/filipbech.png",
     "Contributors": [],
     "SyncContributorsFromRepository": true
   }
