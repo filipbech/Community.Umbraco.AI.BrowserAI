@@ -1,4 +1,4 @@
-namespace Umbraco.AI.BrowserAI.Models;
+namespace Community.Umbraco.AI.BrowserAI.Models;
 
 /// <summary>
 /// Represents a job to be processed by browser-based AI.

@@ -2,10 +2,10 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Umbraco.AI.BrowserAI.Models;
+using Community.Umbraco.AI.BrowserAI.Models;
 using Umbraco.Cms.Web.Common.Authorization;
 
-namespace Umbraco.AI.BrowserAI.Controllers;
+namespace Community.Umbraco.AI.BrowserAI.Controllers;
 
 /// <summary>
 /// API controller for Browser AI job management.

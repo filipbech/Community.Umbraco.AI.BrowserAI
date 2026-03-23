@@ -1,7 +1,7 @@
 using System.Collections.Concurrent;
-using Umbraco.AI.BrowserAI.Models;
+using Community.Umbraco.AI.BrowserAI.Models;
 
-namespace Umbraco.AI.BrowserAI;
+namespace Community.Umbraco.AI.BrowserAI;
 
 /// <summary>
 /// In-memory implementation of <see cref="IBrowserAIJobStore"/>.

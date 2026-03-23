@@ -8,12 +8,12 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Authors>Umbraco HQ</Authors>
-    <Copyright>Copyright © Umbraco HQ</Copyright>
+    <Authors>Filip Bech</Authors>
+    <Copyright>Copyright © Filip Bech</Copyright>
     <PackageIcon>logo-128.png</PackageIcon>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
-    <PackageProjectUrl>https://github.com/umbraco/Umbraco.Ai</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/umbraco/Umbraco.Ai</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/filipbech/Community.Umbraco.AI.BrowserAI</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/filipbech/Community.Umbraco.AI.BrowserAI</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 

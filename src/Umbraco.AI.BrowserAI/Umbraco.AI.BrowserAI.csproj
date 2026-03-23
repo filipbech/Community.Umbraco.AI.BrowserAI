@@ -1,15 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <Title>Umbraco AI Browser AI Provider</Title>
-    <Description>Browser AI provider for Umbraco AI</Description>
-    <PackageTags>umbraco;umbraco-marketplace;ai;browserai;gemini-nano</PackageTags>
-    <StaticWebAssetBasePath>App_Plugins/UmbracoAIBrowserAI</StaticWebAssetBasePath>
+    <PackageId>Community.Umbraco.AI.BrowserAI</PackageId>
+    <Title>Browser AI Provider</Title>
+    <Description>Experimental community Browser AI provider for Umbraco AI. Routes AI inference to Chrome's built-in Gemini Nano model running locally in the browser. Requires Chrome 127+ with Prompt API enabled.</Description>
+    <PackageTags>umbraco;umbraco-marketplace;ai;browserai;gemini-nano;community</PackageTags>
+    <RootNamespace>Community.Umbraco.AI.BrowserAI</RootNamespace>
+    <AssemblyName>Community.Umbraco.AI.BrowserAI</AssemblyName>
+    <StaticWebAssetBasePath>App_Plugins/CommunityBrowserAI</StaticWebAssetBasePath>
     <AddRazorSupportForMvc>false</AddRazorSupportForMvc>
   </PropertyGroup>
 
   <ItemGroup>
-    <InternalsVisibleTo Include="Umbraco.AI.BrowserAI.Tests.Unit" />
+    <InternalsVisibleTo Include="Community.Umbraco.AI.BrowserAI.Tests.Unit" />
   </ItemGroup>
 
   <ItemGroup>

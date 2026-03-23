@@ -1,10 +1,10 @@
 {
   "$schema": "https://marketplace.umbraco.com/umbraco-marketplace-schema.json",
   "AuthorDetails": {
-    "Name": "Umbraco HQ",
+    "Name": "Filip Bech",
     "Description": "",
-    "Url": "https://umbraco.com",
-    "ImageUrl": "https://avatars.githubusercontent.com/u/6aborees=image/format,png",
+    "Url": "https://github.com/filipbech",
+    "ImageUrl": "",
     "Contributors": [],
     "SyncContributorsFromRepository": true
   }

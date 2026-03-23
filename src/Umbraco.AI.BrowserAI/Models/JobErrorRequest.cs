@@ -1,4 +1,4 @@
-namespace Umbraco.AI.BrowserAI.Models;
+namespace Community.Umbraco.AI.BrowserAI.Models;
 
 /// <summary>
 /// Request body for posting job error.

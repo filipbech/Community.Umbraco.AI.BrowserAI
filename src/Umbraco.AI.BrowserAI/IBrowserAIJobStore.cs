@@ -1,6 +1,6 @@
-using Umbraco.AI.BrowserAI.Models;
+using Community.Umbraco.AI.BrowserAI.Models;
 
-namespace Umbraco.AI.BrowserAI;
+namespace Community.Umbraco.AI.BrowserAI;
 
 /// <summary>
 /// Store for managing Browser AI jobs.

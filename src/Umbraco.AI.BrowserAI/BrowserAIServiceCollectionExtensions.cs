@@ -1,6 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Umbraco.AI.BrowserAI;
+namespace Community.Umbraco.AI.BrowserAI;
 
 /// <summary>
 /// Extension methods for registering Browser AI services.

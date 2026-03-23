@@ -1,12 +1,12 @@
 export default {
     uaiFields: {
-        browserAIEnabledLabel: "Enabled",
-        browserAIEnabledDescription: "Whether the Browser AI provider is enabled.",
-        browserAITimeoutSecondsLabel: "Timeout (seconds)",
-        browserAITimeoutSecondsDescription: "How long to wait for a browser response before timing out.",
-        browserAIMaxJobAgeSecondsLabel: "Max Job Age (seconds)",
-        browserAIMaxJobAgeSecondsDescription: "How long to keep jobs in the queue before purging them.",
-        browserAIFallbackProviderIdLabel: "Fallback Provider",
-        browserAIFallbackProviderIdDescription: "Optional provider ID to use when Browser AI times out (e.g., 'openai', 'anthropic').",
+        browserAiEnabledLabel: "Enabled",
+        browserAiEnabledDescription: "Whether the Browser AI provider is enabled.",
+        browserAiTimeoutSecondsLabel: "Timeout (seconds)",
+        browserAiTimeoutSecondsDescription: "How long to wait for a browser response before timing out.",
+        browserAiMaxJobAgeSecondsLabel: "Max Job Age (seconds)",
+        browserAiMaxJobAgeSecondsDescription: "How long to keep jobs in the queue before purging them.",
+        browserAiFallbackProviderIdLabel: "Fallback Provider",
+        browserAiFallbackProviderIdDescription: "Optional provider ID to use when Browser AI times out (e.g., 'openai', 'anthropic').",
     },
 };

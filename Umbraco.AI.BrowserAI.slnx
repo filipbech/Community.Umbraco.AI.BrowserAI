@@ -7,7 +7,4 @@
   <Folder Name="/src/">
     <Project Path="src/Umbraco.AI.BrowserAI/Umbraco.AI.BrowserAI.csproj" />
   </Folder>
-  <Folder Name="/dependencies/">
-    <Project Path="../Umbraco.AI/src/Umbraco.AI.Core/Umbraco.AI.Core.csproj" />
-  </Folder>
 </Solution>

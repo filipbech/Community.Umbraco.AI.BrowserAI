@@ -1,22 +1,22 @@
 {
   "$schema": "../umbraco-package-schema.json",
-  "name": "Umbraco AI Browser AI Provider",
-  "version": "0.1.0",
+  "name": "Browser AI Provider",
+  "version": "1.0.0",
   "extensions": [
     {
       "type": "localization",
-      "alias": "Uai.BrowserAI.Localization.En",
+      "alias": "Community.BrowserAI.Localization.En",
       "weight": -100,
       "meta": {
         "culture": "en"
       },
-      "js": "/App_Plugins/UmbracoAIBrowserAI/lang/en.js"
+      "js": "/App_Plugins/CommunityBrowserAI/lang/en.js"
     },
     {
       "type": "backofficeEntryPoint",
-      "alias": "Uai.BrowserAI.EntryPoint",
+      "alias": "Community.BrowserAI.EntryPoint",
       "name": "Browser AI Service Worker",
-      "js": "/App_Plugins/UmbracoAIBrowserAI/assets/browser-ai-register.js"
+      "js": "/App_Plugins/CommunityBrowserAI/assets/browser-ai-register.js"
     }
   ]
 }
